@@ -1,0 +1,18 @@
+Required Softwares to build and run.
+Gradle Version : 3.3
+JDK Version : 1.8
+Test on Linux (Ubuntu 14.04) and Windows 10.
+
+1. Build the program (on program root directory)
+gradle build
+
+2. Run unit tests (on program root directory)
+gradle test
+
+After that, the report of unit test will be generated at <<Project root>>/build/reports/tests/test.
+Open the index.html in web browser.
+
+3. Run the program ( on program root directory)
+gradle execute -Dexec.args="[PathToDirectory] [outputFile]"
+
+PathToDirectory and outputFile should be absolute paths.

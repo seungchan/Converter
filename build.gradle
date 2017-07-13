@@ -1,0 +1,20 @@
+// Copyright @ 2016 Rubicon Project, All rights reserved.
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile group: 'org.apache.commons', name: 'commons-csv', version: '1.4'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.6'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.6'
+    testCompile 'junit:junit:4.12'
+}
+
+task execute (type:JavaExec) {
+    main = 'rubiconproject.SiteCollector'
+    classpath = sourceSets.main.runtimeClasspath
+    args System.getProperty("exec.args","").split()
+}
